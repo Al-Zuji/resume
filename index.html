@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Syahmi — Robotics & Automation Engineering Project Manager</title>
+<meta name="description" content="Engineering Project Manager building autonomous robots, operator GUIs, RFID tracking and IIoT platforms — concept to commissioning. 7+ years in robotics and Industrial IoT. Based in Shah Alam, Malaysia.">
+<meta name="keywords" content="Engineering Project Manager, Robotics, ROS2, MQTT, Autonomous Vehicle, UGV, RFID, Industrial IoT, IIoT, Fleet Management, HMI, GUI, PLC, SLAM, Malaysia, Shah Alam">
+<meta name="author" content="Muhammad Syahmi Bin Abdul Rahman">
+<meta name="theme-color" content="#0f1424">
+<!-- Open Graph / Social sharing -->
+<meta property="og:title" content="Muhammad Syahmi — Robotics & Automation Engineering Project Manager">
+<meta property="og:description" content="Building autonomous robots, the operator GUIs that drive them, and the IIoT platforms that monitor them — concept to commissioning.">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="en_MY">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muhammad Syahmi — Robotics & Automation Engineering PM">
+<meta name="twitter:description" content="Autonomous robots · Operator GUIs · RFID tracking · FleetOps · ROS2↔MQTT — concept to commissioning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1424;
+    --bg-2: #161b30;
+    --bg-card: #1a2038;
+    --bg-elev: #20274a;
+    --purple: #7c5cff;
+    --purple-bright: #9d7fff;
+    --purple-deep: #5a3fd9;
+    --cyan: #3ed1ff;
+    --pink: #ff4d8f;
+    --orange: #ff7a45;
+    --text: #ffffff;
+    --text-dim: #a4adc8;
+    --text-faint: #6b7396;
+    --line: rgba(255, 255, 255, 0.06);
+    --line-strong: rgba(255, 255, 255, 0.12);
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-lg: 24px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  .ambient { position: fixed; border-radius: 50%; filter: blur(140px); pointer-events: none; z-index: 0; }
+  .ambient-1 { width: 700px; height: 700px; background: var(--purple); opacity: 0.18; bottom: -300px; left: 20%; }
+  .ambient-2 { width: 500px; height: 500px; background: var(--pink); opacity: 0.08; top: 30%; right: -200px; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 22px 56px;
+    display: flex; justify-content: space-between; align-items: center;
+    backdrop-filter: blur(20px);
+    background: rgba(15, 20, 36, 0.7);
+    border-bottom: 1px solid var(--line);
+  }
+  .logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
+  .logo-mark {
+    width: 28px; height: 28px; background: var(--purple); border-radius: 6px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 5px;
+  }
+  .logo-mark span { background: white; border-radius: 2px; }
+  .logo-mark span:nth-child(2), .logo-mark span:nth-child(3) { background: rgba(255,255,255,0.4); }
+  .nav-links { display: flex; gap: 44px; list-style: none; align-items: center; }
+  .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-right { display: flex; align-items: center; gap: 28px; }
+  .nav-right .login { color: var(--text-dim); font-size: 15px; font-weight: 500; text-decoration: none; transition: color 0.2s; }
+  .nav-right .login:hover { color: var(--text); }
+
+  .btn {
+    font-family: var(--font-body); font-size: 15px; font-weight: 600;
+    padding: 13px 26px; border: none; border-radius: var(--radius-sm);
+    cursor: pointer; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: all 0.25s;
+  }
+  .btn-primary {
+    background: var(--purple); color: white;
+    box-shadow: 0 8px 24px rgba(124, 92, 255, 0.35);
+  }
+  .btn-primary:hover { background: var(--purple-bright); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(124, 92, 255, 0.5); }
+  .btn-ghost {
+    background: transparent; color: white;
+    border: 1.5px solid var(--purple);
+    padding: 11.5px 24.5px;
+  }
+  .btn-ghost:hover { background: rgba(124, 92, 255, 0.1); }
+
+  section { padding: 120px 56px; max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow { font-size: 14px; color: var(--text-dim); font-weight: 500; margin-bottom: 16px; }
+  .eyebrow .highlight { color: var(--purple-bright); font-weight: 600; }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    font-weight: 800; letter-spacing: -0.025em; line-height: 1.05;
+    margin-bottom: 24px;
+  }
+  .section-title .accent { color: var(--purple-bright); }
+
+  .hero {
+    min-height: calc(100vh - 80px);
+    padding-top: 140px; padding-bottom: 80px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .hero-left h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800; line-height: 1.05; letter-spacing: -0.035em;
+    margin-bottom: 28px;
+  }
+  .hero-left h1 .purple-word { color: var(--purple-bright); }
+  .hero-tagline { font-size: 1.15rem; color: var(--text-dim); margin-bottom: 40px; max-width: 500px; }
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 56px; }
+  .play-icon { width: 0; height: 0; border-style: solid; border-width: 6px 0 6px 9px; border-color: transparent transparent transparent var(--purple-bright); }
+  .hero-stats { display: grid; grid-template-columns: repeat(4, auto); gap: 40px; }
+  .hero-stat .num { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: white; letter-spacing: -0.02em; }
+  .hero-stat .num .plus { color: var(--purple-bright); }
+  .hero-stat .lbl { font-size: 12px; color: var(--text-faint); margin-top: 4px; }
+
+  .hero-illo { position: relative; width: 100%; aspect-ratio: 1 / 1; max-width: 600px; margin-left: auto; }
+  .hero-illo svg { width: 100%; height: 100%; overflow: visible; }
+
+  @keyframes float-a { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  @keyframes float-b { 0%,100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+  @keyframes float-c { 0%,100% { transform: translate(0,0); } 50% { transform: translate(8px,-6px); } }
+  @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+  @keyframes ring-pulse { 0% { transform: scale(0.8); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+  .float-a { animation: float-a 6s ease-in-out infinite; transform-origin: center; }
+  .float-b { animation: float-b 7s ease-in-out infinite; transform-origin: center; }
+  .float-c { animation: float-c 8s ease-in-out infinite; transform-origin: center; }
+  .spin-slow { animation: spin-slow 18s linear infinite; transform-origin: center; transform-box: fill-box; }
+  .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+  .ring-pulse { animation: ring-pulse 2.5s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: start; }
+  .about-text p { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 20px; line-height: 1.75; }
+  .about-text strong { color: white; font-weight: 600; }
+  .competency-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .comp-pill {
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 16px 18px;
+    font-size: 14px; color: var(--text);
+    display: flex; align-items: center; gap: 12px;
+    transition: all 0.25s;
+  }
+  .comp-pill:hover { border-color: var(--purple); background: var(--bg-elev); transform: translateY(-2px); }
+  .comp-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--purple-bright); flex-shrink: 0; }
+  .comp-pill:nth-child(2n) .comp-dot { background: var(--cyan); }
+  .comp-pill:nth-child(3n) .comp-dot { background: var(--pink); }
+  .comp-pill:nth-child(5n) .comp-dot { background: var(--orange); }
+
+  .exp-card {
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 36px 40px; margin-bottom: 24px;
+    transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .exp-card:hover { border-color: var(--purple); transform: translateX(4px); }
+  .exp-card::before {
+    content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, var(--purple), var(--cyan));
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .exp-card:hover::before { opacity: 1; }
+  .exp-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 8px; flex-wrap: wrap; }
+  .exp-role { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.01em; }
+  .exp-date { font-size: 13px; color: var(--purple-bright); font-weight: 600; background: rgba(124, 92, 255, 0.12); padding: 6px 14px; border-radius: 100px; white-space: nowrap; }
+  .exp-company { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 18px; }
+  .exp-desc { color: var(--text-dim); margin-bottom: 20px; }
+  .exp-points { list-style: none; display: grid; gap: 10px; }
+  .exp-points li { padding-left: 28px; position: relative; color: var(--text-dim); font-size: 0.95rem; }
+  .exp-points li::before { content: ''; position: absolute; left: 0; top: 9px; width: 14px; height: 2px; background: var(--purple-bright); border-radius: 2px; }
+
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .work-card {
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: var(--radius-lg); overflow: hidden; transition: all 0.35s;
+  }
+  .work-card:hover { transform: translateY(-6px); border-color: var(--purple); box-shadow: 0 20px 60px rgba(124, 92, 255, 0.15); }
+  .work-media {
+    aspect-ratio: 16/10; background: var(--bg-elev);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .work-media::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 25% 25%, rgba(124, 92, 255, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(62, 209, 255, 0.1) 0%, transparent 50%);
+  }
+  .work-media .placeholder {
+    position: relative; z-index: 2; text-align: center;
+    border: 2px dashed var(--line-strong);
+    padding: 22px 32px; border-radius: var(--radius);
+    background: rgba(15, 20, 36, 0.6); backdrop-filter: blur(8px);
+  }
+  .work-media .placeholder .icon { font-size: 28px; margin-bottom: 8px; }
+  .work-media .placeholder .label { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.1em; }
+  .work-media .placeholder .hint { font-size: 11px; color: var(--purple-bright); margin-top: 6px; }
+  .work-media img, .work-media video { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 3; }
+
+  .work-card-wide { grid-column: 1 / -1; }
+  .bridge-diagram { aspect-ratio: 12 / 5; padding: 0; }
+  .bridge-diagram svg { width: 100%; height: 100%; display: block; position: relative; z-index: 2; }
+  .gallery { display: grid; grid-template-columns: 1fr; }
+  .gallery-main {
+    aspect-ratio: 16/8; background: var(--bg-elev);
+    position: relative; overflow: hidden; cursor: zoom-in;
+  }
+  .gallery-main::after {
+    content: '⤢'; position: absolute; top: 14px; right: 14px; z-index: 5;
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(15, 20, 36, 0.7); backdrop-filter: blur(6px);
+    border: 1px solid var(--line-strong);
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 16px; pointer-events: none;
+    transition: background 0.2s;
+  }
+  .gallery-main:hover::after { background: var(--purple); }
+  .gallery-main img, .gallery-main video {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .gallery-thumbs {
+    display: flex; gap: 10px; padding: 14px 18px;
+    background: var(--bg-elev); overflow-x: auto;
+    scrollbar-width: thin; scrollbar-color: var(--purple) transparent;
+  }
+  .gallery-thumbs::-webkit-scrollbar { height: 6px; }
+  .gallery-thumbs::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
+  .gallery-thumb {
+    flex: 0 0 auto; width: 110px; height: 70px;
+    border-radius: 8px; overflow: hidden;
+    border: 2px solid transparent; cursor: pointer;
+    background: var(--bg-card); padding: 0;
+    position: relative; transition: all 0.2s;
+  }
+  .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .gallery-thumb.is-video::after {
+    content: '▶'; position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 20px;
+    background: rgba(15, 20, 36, 0.45);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+  .gallery-thumb:hover { border-color: var(--purple-bright); transform: translateY(-2px); }
+  .gallery-thumb.active { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(124,92,255,0.25); }
+
+  .lightbox {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(8, 11, 22, 0.92); backdrop-filter: blur(8px);
+    display: none; align-items: center; justify-content: center;
+    padding: 40px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox-content {
+    max-width: min(1200px, 92vw);
+    max-height: 88vh; position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .lightbox-content img, .lightbox-content video {
+    max-width: 100%; max-height: 88vh;
+    border-radius: var(--radius);
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+    display: block;
+  }
+  .lightbox-btn {
+    position: absolute; top: 24px; width: 48px; height: 48px;
+    border-radius: 50%; border: 1px solid var(--line-strong);
+    background: rgba(15, 20, 36, 0.85); color: white;
+    font-size: 22px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; z-index: 210;
+  }
+  .lightbox-btn:hover { background: var(--purple); border-color: var(--purple); transform: scale(1.06); }
+  .lightbox-close { right: 32px; }
+  .lightbox-prev, .lightbox-next {
+    top: 50%; transform: translateY(-50%); width: 54px; height: 54px;
+  }
+  .lightbox-prev:hover, .lightbox-next:hover { transform: translateY(-50%) scale(1.06); }
+  .lightbox-prev { left: 24px; }
+  .lightbox-next { right: 24px; }
+  .lightbox-counter {
+    position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+    color: var(--text-dim); font-family: var(--font-mono); font-size: 13px;
+    background: rgba(15, 20, 36, 0.85);
+    padding: 8px 16px; border-radius: 100px;
+    border: 1px solid var(--line-strong);
+  }
+  .work-body { padding: 28px 30px 30px; }
+  .work-cat { font-size: 11px; font-weight: 600; color: var(--purple-bright); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+  .work-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.015em; }
+  .work-desc { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px; }
+  .work-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .work-chips span { font-size: 12px; color: var(--text-dim); padding: 5px 12px; background: rgba(124, 92, 255, 0.1); border: 1px solid rgba(124, 92, 255, 0.2); border-radius: 100px; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .skill-card {
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: var(--radius-lg); padding: 32px;
+    position: relative; overflow: hidden; transition: all 0.3s;
+  }
+  .skill-card:hover { border-color: var(--purple); transform: translateY(-4px); }
+  .skill-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-deep));
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px; font-size: 24px;
+    box-shadow: 0 8px 20px rgba(124, 92, 255, 0.3);
+  }
+  .skill-card:nth-child(2) .skill-icon { background: linear-gradient(135deg, var(--cyan), #2196d8); box-shadow: 0 8px 20px rgba(62, 209, 255, 0.3); }
+  .skill-card:nth-child(3) .skill-icon { background: linear-gradient(135deg, var(--pink), #c9326b); box-shadow: 0 8px 20px rgba(255, 77, 143, 0.3); }
+  .skill-card:nth-child(4) .skill-icon { background: linear-gradient(135deg, var(--orange), #d9551a); box-shadow: 0 8px 20px rgba(255, 122, 69, 0.3); }
+  .skill-cat-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 16px; }
+  .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-chips span {
+    font-size: 13px; color: var(--text); padding: 6px 14px;
+    background: var(--bg-elev); border: 1px solid var(--line);
+    border-radius: 100px; transition: all 0.2s;
+  }
+  .skill-chips span:hover { color: var(--purple-bright); border-color: var(--purple); }
+
+  .cta-card {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-elev));
+    border: 1px solid var(--line-strong);
+    border-radius: 32px; padding: 80px 60px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-card::before {
+    content: ''; position: absolute;
+    width: 400px; height: 400px; background: var(--purple);
+    border-radius: 50%; filter: blur(100px); opacity: 0.25;
+    top: -150px; right: -100px;
+  }
+  .cta-card::after {
+    content: ''; position: absolute;
+    width: 300px; height: 300px; background: var(--cyan);
+    border-radius: 50%; filter: blur(120px); opacity: 0.12;
+    bottom: -150px; left: -50px;
+  }
+  .cta-card > * { position: relative; z-index: 2; }
+  .cta-card h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+    margin-bottom: 24px;
+  }
+  .cta-card h2 .accent { color: var(--purple-bright); }
+  .cta-card p { color: var(--text-dim); font-size: 1.15rem; max-width: 520px; margin: 0 auto 40px; }
+  .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; align-items: center; }
+  .contact-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+  .contact-link {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--line-strong);
+    padding: 14px 22px; border-radius: 12px;
+    color: var(--text); text-decoration: none;
+    font-size: 14px; font-weight: 500;
+    transition: all 0.25s;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .contact-link:hover { background: rgba(124, 92, 255, 0.15); border-color: var(--purple); transform: translateY(-2px); }
+
+  footer {
+    padding: 40px 56px;
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--text-faint); font-size: 13px;
+  }
+
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 960px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .nav-right .login { display: none; }
+    section { padding: 80px 20px; }
+    .hero { grid-template-columns: 1fr; padding-top: 120px; gap: 40px; }
+    .hero-illo { max-width: 400px; margin: 0 auto; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .about-grid, .work-grid, .skills-grid { grid-template-columns: 1fr; }
+    .competency-grid { grid-template-columns: 1fr; }
+    .exp-card { padding: 28px 24px; }
+    .cta-card { padding: 48px 24px; }
+    footer { flex-direction: column; gap: 12px; padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ambient ambient-1"></div>
+<div class="ambient ambient-2"></div>
+
+<nav>
+  <div class="logo">
+    <div class="logo-mark"><span></span><span></span><span></span><span></span></div>
+    Syahmi.Eng
+  </div>
+  <ul class="nav-links">
+    <li><a href="#top">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#contact" class="login">Contact</a>
+    <a href="#contact" class="btn btn-primary">Hire Me</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-left">
+    <div class="eyebrow">Introducing <span class="highlight">Muhammad Syahmi</span></div>
+    <h1>Engineering<br><span class="purple-word">robotics</span> &amp;<br>automation.</h1>
+    <p class="hero-tagline">I build autonomous robots, the operator GUIs that drive them, and the IIoT platforms that monitor them — concept to commissioning, with cross-functional teams.</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary">View my work</a>
+      <a href="#contact" class="btn btn-ghost"><span class="play-icon"></span>Get in touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">7<span class="plus">+</span></div><div class="lbl">Years</div></div>
+      <div class="hero-stat"><div class="num">15<span class="plus">+</span></div><div class="lbl">Projects</div></div>
+      <div class="hero-stat"><div class="num">20<span class="plus">%</span></div><div class="lbl">Efficiency</div></div>
+      <div class="hero-stat"><div class="num">25<span class="plus">%</span></div><div class="lbl">Retention</div></div>
+    </div>
+  </div>
+
+  <div class="hero-illo">
+    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#9d7fff"/><stop offset="100%" stop-color="#5a3fd9"/>
+        </linearGradient>
+        <linearGradient id="grad-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#3ed1ff"/><stop offset="100%" stop-color="#2196d8"/>
+        </linearGradient>
+        <linearGradient id="grad-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ff4d8f"/><stop offset="100%" stop-color="#c9326b"/>
+        </linearGradient>
+        <linearGradient id="grad-progress" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#7c5cff"/><stop offset="100%" stop-color="#3ed1ff"/>
+        </linearGradient>
+        <linearGradient id="grad-rail" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ff7a45"/>
+          <stop offset="50%" stop-color="#ff4d8f"/>
+          <stop offset="100%" stop-color="#7c5cff"/>
+        </linearGradient>
+      </defs>
+
+      <g fill="#ffffff" opacity="0.3">
+        <g transform="translate(60, 200)">
+          <circle cx="0" cy="0" r="2"/><circle cx="14" cy="0" r="2"/><circle cx="28" cy="0" r="2"/><circle cx="42" cy="0" r="2"/>
+          <circle cx="0" cy="14" r="2"/><circle cx="14" cy="14" r="2"/><circle cx="28" cy="14" r="2"/><circle cx="42" cy="14" r="2"/>
+          <circle cx="0" cy="28" r="2"/><circle cx="14" cy="28" r="2"/><circle cx="28" cy="28" r="2"/><circle cx="42" cy="28" r="2"/>
+          <circle cx="0" cy="42" r="2"/><circle cx="14" cy="42" r="2"/><circle cx="28" cy="42" r="2"/><circle cx="42" cy="42" r="2"/>
+        </g>
+        <g transform="translate(490, 380)">
+          <circle cx="0" cy="0" r="2"/><circle cx="14" cy="0" r="2"/><circle cx="28" cy="0" r="2"/>
+          <circle cx="0" cy="14" r="2"/><circle cx="14" cy="14" r="2"/><circle cx="28" cy="14" r="2"/>
+          <circle cx="0" cy="28" r="2"/><circle cx="14" cy="28" r="2"/><circle cx="28" cy="28" r="2"/>
+        </g>
+      </g>
+
+      <circle cx="70" cy="170" r="9" fill="#ff4d8f" class="pulse-dot"/>
+      <circle cx="540" cy="540" r="10" fill="url(#grad-pink)" class="float-c"/>
+      <circle cx="115" cy="500" r="6" fill="#ff7a45" class="pulse-dot"/>
+
+      <g stroke="#ffffff" stroke-width="1" stroke-dasharray="4 6" opacity="0.25" fill="none">
+        <line x1="160" y1="100" x2="500" y2="100"/>
+        <line x1="540" y1="140" x2="540" y2="400"/>
+        <line x1="80" y1="540" x2="450" y2="540"/>
+      </g>
+
+      <g class="float-a">
+        <rect x="180" y="130" width="240" height="240" rx="24" fill="#1a2038" stroke="rgba(255,255,255,0.08)"/>
+        <circle cx="210" cy="160" r="5" fill="#ff4d8f"/>
+        <circle cx="226" cy="160" r="5" fill="#ff7a45"/>
+        <circle cx="242" cy="160" r="5" fill="#3ed1ff"/>
+        <rect x="345" y="155" width="50" height="10" rx="5" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="300" cy="250" r="62" fill="none" stroke="#20274a" stroke-width="10"/>
+        <circle cx="300" cy="250" r="62" fill="none" stroke="url(#grad-progress)" stroke-width="10"
+                stroke-linecap="round" stroke-dasharray="290 100" transform="rotate(-90 300 250)"/>
+        <text x="300" y="245" text-anchor="middle" fill="white" font-family="Plus Jakarta Sans" font-weight="700" font-size="26">75%</text>
+        <text x="300" y="265" text-anchor="middle" fill="#a4adc8" font-family="JetBrains Mono" font-size="9" letter-spacing="2">UPTIME</text>
+        <polyline points="200,340 220,325 240,335 260,310 280,320 300,300 320,315 340,295 360,305 380,285 400,300"
+                  fill="none" stroke="#3ed1ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+      </g>
+
+      <g class="float-b">
+        <rect x="420" y="140" width="100" height="110" rx="18" fill="#1a2038" stroke="rgba(255,255,255,0.08)"/>
+        <path d="M 420 140 A 100 100 0 0 1 520 240 L 520 140 Z" fill="url(#grad-pink)" opacity="0.9"/>
+        <rect x="438" y="200" width="14" height="14" rx="3" fill="rgba(255,255,255,0.15)"/>
+        <rect x="458" y="200" width="14" height="14" rx="3" fill="rgba(255,255,255,0.25)"/>
+        <rect x="438" y="220" width="14" height="14" rx="3" fill="rgba(255,255,255,0.25)"/>
+        <rect x="458" y="220" width="14" height="14" rx="3" fill="rgba(255,255,255,0.15)"/>
+      </g>
+
+      <g class="float-c">
+        <rect x="130" y="290" width="80" height="80" rx="16" fill="url(#grad-purple)"/>
+        <circle cx="165" cy="315" r="6" fill="white"/>
+        <circle cx="195" cy="335" r="6" fill="white"/>
+        <circle cx="165" cy="355" r="6" fill="white"/>
+        <line x1="165" y1="315" x2="195" y2="335" stroke="white" stroke-width="2"/>
+        <line x1="195" y1="335" x2="165" y2="355" stroke="white" stroke-width="2"/>
+      </g>
+
+      <g class="float-a">
+        <rect x="220" y="395" width="65" height="65" rx="14" fill="url(#grad-purple)" opacity="0.85"/>
+        <g transform="translate(252.5, 427.5)">
+          <g class="spin-slow">
+            <path d="M 0,-13 L 3,-13 L 4,-8 A 8 8 0 0 1 7,-7 L 11,-9 L 13,-7 L 11,-3 A 8 8 0 0 1 12,0 L 13,3 L 11,7 L 7,7 A 8 8 0 0 1 4,8 L 3,13 L 0,13 L -3,13 L -4,8 A 8 8 0 0 1 -7,7 L -11,9 L -13,7 L -11,3 A 8 8 0 0 1 -12,0 L -13,-3 L -11,-7 L -7,-7 A 8 8 0 0 1 -4,-8 L -3,-13 Z" fill="white"/>
+            <circle cx="0" cy="0" r="4" fill="url(#grad-purple)"/>
+          </g>
+        </g>
+      </g>
+
+      <g class="float-b">
+        <circle cx="395" cy="425" r="28" fill="url(#grad-pink)"/>
+        <polygon points="388,412 388,438 410,425" fill="white"/>
+        <circle cx="395" cy="425" r="28" fill="none" stroke="#ff4d8f" stroke-width="2" opacity="0.5" class="ring-pulse"/>
+      </g>
+
+      <path d="M 90 470 A 90 90 0 0 1 180 380 L 180 470 Z" fill="url(#grad-purple)" opacity="0.85" class="float-c"/>
+
+      <g class="float-a">
+        <rect x="552" y="200" width="6" height="200" rx="3" fill="url(#grad-rail)"/>
+        <circle cx="555" cy="290" r="11" fill="white" stroke="#7c5cff" stroke-width="2"/>
+      </g>
+
+      <g class="float-b">
+        <rect x="290" y="475" width="200" height="40" rx="14" fill="none" stroke="white" stroke-width="2"/>
+        <rect x="296" y="481" width="80" height="28" rx="10" fill="rgba(255,255,255,0.08)"/>
+        <rect x="380" y="481" width="104" height="28" rx="10" fill="url(#grad-purple)"/>
+      </g>
+
+      <rect x="195" y="100" width="100" height="22" rx="11" fill="none" stroke="#3ed1ff" stroke-width="2" class="float-c"/>
+
+      <g class="float-a">
+        <circle cx="470" cy="550" r="3" fill="#7c5cff"/>
+        <circle cx="482" cy="550" r="3" fill="#7c5cff" opacity="0.7"/>
+        <circle cx="494" cy="550" r="3" fill="#7c5cff" opacity="0.4"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section id="about" class="reveal">
+  <div class="eyebrow">About <span class="highlight">/ Profile</span></div>
+  <h2 class="section-title">From the robot<br>to the dashboard. <span class="accent">End-to-end.</span></h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm <strong>Muhammad Syahmi</strong> — an engineering project manager who builds <strong>autonomous robots</strong>, the <strong>operator GUIs</strong> that drive them, and the <strong>IIoT platforms</strong> that monitor them. Seven years end-to-end: concept → prototype → field trial → production deployment.</p>
+      <p>Currently leading a cross-functional team of <strong>6–7 engineers</strong> at Sailcott (M) International across software, electrical, and mechanical disciplines. Together we've shipped the <strong>Electric Cart Carrier (ECC)</strong> and <strong>Autonomous Buggy / UGV</strong>, designed in-house operator HMIs used daily on site, deployed an <strong>RFID + smart-weighing</strong> system for clinical-waste compliance, built <strong>FleetOps</strong> — the in-house web platform that monitors and manages the entire fleet in real time — and architected the <strong>ROS2 ↔ MQTT bridge</strong> that ties it all together.</p>
+      <p>I turn ambitious R&amp;D into <strong>production-ready automation</strong> that ships on time, on budget, and built to scale. Targeting Engineering Manager roles where robotics architecture, hands-on team development, and product-driven automation strategy intersect.</p>
+    </div>
+    <div class="competency-grid">
+      <div class="comp-pill"><div class="comp-dot"></div>Engineering Team Leadership</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Robotics &amp; Autonomy</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Industrial IoT</div>
+      <div class="comp-pill"><div class="comp-dot"></div>System Architecture</div>
+      <div class="comp-pill"><div class="comp-dot"></div>ROS2 &amp; MQTT</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Agile &amp; Sprint Planning</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Product Lifecycle</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Cross-Functional Mgmt</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Risk Management</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Budget &amp; Resources</div>
+      <div class="comp-pill"><div class="comp-dot"></div>PLC Programming</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Edge &amp; Embedded</div>
+      <div class="comp-pill"><div class="comp-dot"></div>RFID &amp; Asset Tracking</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Compliance Logging</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Operator GUI / HMI Design</div>
+      <div class="comp-pill"><div class="comp-dot"></div>SLAM &amp; Mapping Tools</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="reveal">
+  <div class="eyebrow">Experience <span class="highlight">/ Track Record</span></div>
+  <h2 class="section-title">Where I've <span class="accent">built things.</span></h2>
+
+  <div class="exp-card">
+    <div class="exp-head">
+      <div>
+        <div class="exp-role">Project Manager, R&amp;D and System Integration</div>
+        <div class="exp-company">Sailcott (M) International Sdn. Bhd. — Shah Alam, MY</div>
+      </div>
+      <span class="exp-date">2020 — Present</span>
+    </div>
+    <p class="exp-desc">Lead a cross-functional team of 6–7 engineers driving end-to-end development and deployment of robotics and automation systems across R&amp;D and commercial environments.</p>
+    <ul class="exp-points">
+      <li>Direct development of autonomous mobility platforms — Electric Cart Carrier (ECC) &amp; Autonomous Buggy / UGV — from concept through commissioning.</li>
+      <li>Delivered an RFID + smart-weighing clinical-waste tracking system: UHF tag reads, live bin/weight dashboard, and automated compliance logging — replacing manual paperwork on site.</li>
+      <li>Shipped <strong>FleetOps</strong> — an in-house fleet management web platform with live status, geolocation map, multi-camera feeds, battery/speed analytics, and role-based admin for the autonomous buggy &amp; ECC fleet.</li>
+      <li>Designed operator-facing <strong>GUIs / HMIs</strong> used daily on site — multi-map ROS2 launch, SLAM mapping &amp; teleop tools, keepout-mask generator, and PLC ON/OFF control over USB-UART — turning a terminal-only workflow into a one-screen operator panel.</li>
+      <li>Architected ROS2-to-MQTT communication framework enabling reliable cloud-to-robot data transmission and scalable IoT integration.</li>
+      <li>Delivered 3 major automation projects ahead of schedule while maintaining full budget compliance.</li>
+      <li>Improved engineering delivery efficiency by 20% through structured sprint planning and workflow optimization.</li>
+      <li>Primary technical liaison between engineering teams, management, and clients.</li>
+    </ul>
+  </div>
+
+  <div class="exp-card">
+    <div class="exp-head">
+      <div>
+        <div class="exp-role">Automation &amp; IoT Consultant</div>
+        <div class="exp-company">Independent Practice — Freelance</div>
+      </div>
+      <span class="exp-date">2018 — Present</span>
+    </div>
+    <p class="exp-desc">Industrial automation, PLC programming, and IoT system integration services for SMEs across manufacturing and energy sectors.</p>
+    <ul class="exp-points">
+      <li>Delivered 15+ automation and IoT projects including PLC systems, CRM integration, and cloud-based dashboards.</li>
+      <li>Designed MQTT-based IoT architectures and Node-RED dashboards for operational analytics.</li>
+      <li>Increased client retention by 25% through proactive optimization and structured reporting.</li>
+      <li>Owned scope, milestones, vendor coordination, and deployment end-to-end.</li>
+    </ul>
+  </div>
+
+  <div class="exp-card">
+    <div class="exp-head">
+      <div>
+        <div class="exp-role">Automation Project Intern</div>
+        <div class="exp-company">East Automation &amp; Engineering Sdn. Bhd. — Subang Jaya, MY</div>
+      </div>
+      <span class="exp-date">2018</span>
+    </div>
+    <p class="exp-desc">Supported system design, prototype deployment, and validation for solar monitoring and laser surveillance automation systems.</p>
+    <ul class="exp-points">
+      <li>Developed GUI control interfaces for automated monitoring solutions.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="work" class="reveal">
+  <div class="eyebrow">Selected Work <span class="highlight">/ Portfolio</span></div>
+  <h2 class="section-title">Things I've <span class="accent">shipped.</span></h2>
+  <div class="work-grid">
+
+    <article class="work-card">
+      <div class="gallery" data-gallery>
+        <div class="gallery-main" data-gallery-main>
+          <video src="ECC/AQM9PhBuhccIEvSAk8R3F__rdiR4Dt09UoQnQs3_5byjDGe9nsUf3rZHRKcyjB0O8kKr6XbZO0Lsdsj3VXFOPv3tCl4eEZpw74g.mp4"
+                 poster="ECC/electric_carrier-0.png"
+                 autoplay muted loop playsinline></video>
+        </div>
+        <div class="gallery-thumbs" data-gallery-thumbs>
+          <button class="gallery-thumb is-video active" data-type="video"
+                  data-src="ECC/AQM9PhBuhccIEvSAk8R3F__rdiR4Dt09UoQnQs3_5byjDGe9nsUf3rZHRKcyjB0O8kKr6XbZO0Lsdsj3VXFOPv3tCl4eEZpw74g.mp4"
+                  data-poster="ECC/electric_carrier-0.png"
+                  aria-label="ECC field demo video">
+            <img src="ECC/electric_carrier-0.png" alt="ECC field demo">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="ECC/electric_carrier-0.png"
+                  aria-label="ECC in operation — operator in PPE">
+            <img src="ECC/electric_carrier-0.png" alt="ECC in operation">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="ECC/electric_carrier-1.png"
+                  aria-label="Electric Cart Carrier — product overview">
+            <img src="ECC/electric_carrier-1.png" alt="ECC product overview">
+          </button>
+        </div>
+      </div>
+      <div class="work-body">
+        <div class="work-cat">Robotics · Autonomous Mobility</div>
+        <h3 class="work-title">Electric Cart Carrier (ECC)</h3>
+        <p class="work-desc">Autonomous electric cart carrier for clinical-waste handling — delivered concept-to-commissioning. Perception, navigation, and fleet control. Click any thumb to switch, or click the main view to enlarge.</p>
+        <div class="work-chips"><span>ROS2</span><span>MQTT</span><span>NVIDIA Jetson</span><span>Python</span></div>
+      </div>
+    </article>
+
+    <article class="work-card">
+      <div class="gallery" data-gallery>
+        <div class="gallery-main" data-gallery-main>
+          <video src="UGV/AQMEha6fNAAUV9Gf4X5_3C43EbbaDTWlDqqSqwQiRmycdI9UoYdJ84mjWZKBCjxn8VtqJg5oQpHuk-tn1OgttqswcUUs1Nns2pZAo9p8d_2F5g.mp4"
+                 poster="UGV/ugv-1.jpg"
+                 autoplay muted loop playsinline></video>
+        </div>
+        <div class="gallery-thumbs" data-gallery-thumbs>
+          <button class="gallery-thumb is-video active" data-type="video"
+                  data-src="UGV/AQMEha6fNAAUV9Gf4X5_3C43EbbaDTWlDqqSqwQiRmycdI9UoYdJ84mjWZKBCjxn8VtqJg5oQpHuk-tn1OgttqswcUUs1Nns2pZAo9p8d_2F5g.mp4"
+                  data-poster="UGV/ugv-1.jpg"
+                  aria-label="UGV field test video">
+            <img src="UGV/ugv-1.jpg" alt="UGV field test">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="UGV/ugv-1.jpg"
+                  aria-label="Engineering team with UGV chassis">
+            <img src="UGV/ugv-1.jpg" alt="Engineering team with UGV chassis">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="UGV/ugv-2.png"
+                  aria-label="UGV field deployment in plantation">
+            <img src="UGV/ugv-2.png" alt="UGV field deployment">
+          </button>
+        </div>
+      </div>
+      <div class="work-body">
+        <div class="work-cat">Robotics · Autonomous Vehicle</div>
+        <h3 class="work-title">Autonomous Buggy / UGV</h3>
+        <p class="work-desc">Autonomous buggy / unmanned ground vehicle delivered ahead of schedule. Cross-disciplinary integration across software, electrical, and mechanical teams — from lab build to outdoor field trials. Click any thumb to switch, or click the main view to enlarge.</p>
+        <div class="work-chips"><span>ROS2</span><span>Embedded Linux</span><span>C++</span><span>Sensor Fusion</span></div>
+      </div>
+    </article>
+
+    <article class="work-card work-card-wide" id="gui-card">
+      <div class="gallery" data-gallery>
+        <div class="gallery-main" data-gallery-main>
+          <video src="GUI/GUI_1m20s.mp4"
+                 poster="GUI/WhatsApp%20Image%202026-05-18%20at%201.11.59%20PM%20(1).jpeg"
+                 autoplay muted loop playsinline></video>
+        </div>
+        <div class="gallery-thumbs" data-gallery-thumbs>
+          <button class="gallery-thumb is-video active" data-type="video"
+                  data-src="GUI/GUI_1m20s.mp4"
+                  data-poster="GUI/WhatsApp%20Image%202026-05-18%20at%201.11.59%20PM%20(1).jpeg"
+                  aria-label="Scrubber Control Panel walkthrough video">
+            <img src="GUI/WhatsApp%20Image%202026-05-18%20at%201.11.59%20PM%20(1).jpeg" alt="GUI walkthrough">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="GUI/WhatsApp%20Image%202026-05-18%20at%201.11.59%20PM%20(1).jpeg"
+                  aria-label="Full operator control panel — map launch, SLAM tools, map management">
+            <img src="GUI/WhatsApp%20Image%202026-05-18%20at%201.11.59%20PM%20(1).jpeg" alt="Full control panel">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="GUI/WhatsApp%20Image%202026-05-18%20at%201.11.59%20PM.jpeg"
+                  aria-label="PLC control panel — ON/OFF toggles for motor, scrubber, vacuum subsystems">
+            <img src="GUI/WhatsApp%20Image%202026-05-18%20at%201.11.59%20PM.jpeg" alt="PLC control panel">
+          </button>
+        </div>
+      </div>
+      <div class="work-body">
+        <div class="work-cat">Robotics · Operator HMI &amp; GUI</div>
+        <h3 class="work-title">Scrubber Robot — Operator Control Panel</h3>
+        <p class="work-desc">A purpose-built desktop GUI that lets site operators run the autonomous scrubber without touching a terminal. One panel covers map launching (corridors, labs, custom keepout zones), SLAM mapping with teleop, map save/keepout-mask generation, and direct PLC control (Start/Stop System, Auto Vacuum, Auto Scrubber, Motor Driver) over USB-UART — with live battery voltage and connection health at the top. Built to ship: clear states, big touch-friendly buttons, and a hard EXIT that gracefully kills child ROS2 processes. Click any thumb to switch, or click the main view to enlarge.</p>
+        <div class="work-chips"><span>Python</span><span>PyQt</span><span>ROS2 Launch</span><span>SLAM Toolbox</span><span>PLC · Modbus</span><span>FT232R USB-UART</span><span>Subprocess Mgmt</span><span>Touch-friendly UI</span></div>
+      </div>
+    </article>
+
+    <article class="work-card work-card-wide" id="rfid-card">
+      <div class="gallery" data-gallery>
+        <div class="gallery-main" data-gallery-main>
+          <video src="RFID/AQMJEh7JTEGrgAzhkXyXP98phXY3xccEkCRyGVKXb4ZZzbm1ziHlzkFhVrM1BsedsUL-9XuPy0cy6l-FrkU_AZ5Z.mp4"
+                 poster="RFID/rfid-1.png"
+                 autoplay muted loop playsinline></video>
+        </div>
+        <div class="gallery-thumbs" data-gallery-thumbs>
+          <button class="gallery-thumb is-video active" data-type="video"
+                  data-src="RFID/AQMJEh7JTEGrgAzhkXyXP98phXY3xccEkCRyGVKXb4ZZzbm1ziHlzkFhVrM1BsedsUL-9XuPy0cy6l-FrkU_AZ5Z.mp4"
+                  data-poster="RFID/rfid-1.png"
+                  aria-label="Live dashboard video">
+            <img src="RFID/rfid-1.png" alt="Live dashboard">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="RFID/WhatsApp Image 2026-05-14 at 8.26.10 AM.jpeg"
+                  aria-label="Operator at weighing station">
+            <img src="RFID/WhatsApp Image 2026-05-14 at 8.26.10 AM.jpeg" alt="Operator at weighing station">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="RFID/WhatsApp Image 2026-05-14 at 8.27.19 AM.jpeg"
+                  aria-label="RFID antenna and weighing scale">
+            <img src="RFID/WhatsApp Image 2026-05-14 at 8.27.19 AM.jpeg" alt="RFID antenna and weighing scale">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="RFID/WhatsApp Image 2026-05-14 at 8.27.11 AM.jpeg"
+                  aria-label="UHF RFID tags">
+            <img src="RFID/WhatsApp Image 2026-05-14 at 8.27.11 AM.jpeg" alt="UHF RFID tags">
+          </button>
+          <button class="gallery-thumb is-video" data-type="video"
+                  data-src="RFID/WhatsApp Video 2026-05-14 at 8.28.51 AM.mp4"
+                  data-poster="RFID/WhatsApp Image 2026-05-14 at 8.26.10 AM.jpeg"
+                  aria-label="Site walkthrough video">
+            <img src="RFID/WhatsApp Image 2026-05-14 at 8.26.10 AM.jpeg" alt="Site walkthrough">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="RFID/rfid-1.png"
+                  aria-label="Live dashboard close-up">
+            <img src="RFID/rfid-1.png" alt="Live dashboard close-up">
+          </button>
+        </div>
+      </div>
+      <div class="work-body">
+        <div class="work-cat">Industrial IoT · RFID, Weighing &amp; Operator GUI</div>
+        <h3 class="work-title">RFID Clinical Waste Tracking &amp; Weighing Station</h3>
+        <p class="work-desc">End-to-end RFID + smart-weighing system for clinical waste deployed on site. UHF RFID-tagged bins are auto-identified at the weighing station; bin ID, gross weight, tare and net waste weight stream live to a <strong>custom-built operator dashboard GUI</strong> on a wall-mounted display — large readouts for fast operator workflow, automated compliance logging, and zero manual paperwork. The GUI was designed in-house to match the site's lighting and reach distance, with auto-tare logic to eliminate weighing errors. Click any thumb to switch, or click the main view to enlarge.</p>
+        <div class="work-chips"><span>UHF RFID</span><span>Smart Scale</span><span>UHF Antenna</span><span>MQTT</span><span>Python</span><span>Operator GUI</span><span>Node-RED</span><span>Edge Gateway</span><span>Compliance Logging</span></div>
+      </div>
+    </article>
+
+    <article class="work-card work-card-wide">
+      <div class="work-media bridge-diagram">
+        <svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="brg-bridge" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#9d7fff"/>
+              <stop offset="100%" stop-color="#5a3fd9"/>
+            </linearGradient>
+            <linearGradient id="brg-broker" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#3ed1ff"/>
+              <stop offset="100%" stop-color="#2196d8"/>
+            </linearGradient>
+            <linearGradient id="brg-cloud" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff4d8f"/>
+              <stop offset="100%" stop-color="#c9326b"/>
+            </linearGradient>
+
+            <!-- Forward (telemetry) paths: robot → bridge → broker → cloud -->
+            <path id="brg-p1" d="M 320,160 C 400,160 400,220 470,220" fill="none"/>
+            <path id="brg-p2" d="M 320,210 C 400,210 400,235 470,235" fill="none"/>
+            <path id="brg-p3" d="M 320,260 C 400,260 400,250 470,250" fill="none"/>
+            <path id="brg-p4" d="M 320,310 C 400,310 400,265 470,265" fill="none"/>
+            <path id="brg-bb" d="M 690,230 L 810,210" fill="none"/>
+            <path id="brg-bc" d="M 920,210 L 1010,210" fill="none"/>
+
+            <!-- Reverse (commands) paths: cloud → broker → bridge → robot -->
+            <path id="brg-cb" d="M 1010,290 L 920,290" fill="none"/>
+            <path id="brg-bb-rev" d="M 810,290 L 690,270" fill="none"/>
+            <path id="brg-br1" d="M 470,295 C 400,295 400,360 320,360" fill="none"/>
+            <path id="brg-br2" d="M 470,280 C 400,280 400,400 320,400" fill="none"/>
+          </defs>
+
+          <!-- Background dot grid -->
+          <g fill="rgba(255,255,255,0.05)">
+            <circle cx="50" cy="50" r="2"/><circle cx="80" cy="50" r="2"/><circle cx="110" cy="50" r="2"/>
+            <circle cx="50" cy="450" r="2"/><circle cx="80" cy="450" r="2"/><circle cx="110" cy="450" r="2"/>
+            <circle cx="1090" cy="50" r="2"/><circle cx="1120" cy="50" r="2"/><circle cx="1150" cy="50" r="2"/>
+            <circle cx="1090" cy="450" r="2"/><circle cx="1120" cy="450" r="2"/><circle cx="1150" cy="450" r="2"/>
+          </g>
+
+          <!-- Static wires -->
+          <g stroke="rgba(255,255,255,0.18)" stroke-width="2" stroke-dasharray="5 6" fill="none">
+            <use href="#brg-p1"/><use href="#brg-p2"/><use href="#brg-p3"/><use href="#brg-p4"/>
+            <use href="#brg-bb"/><use href="#brg-bc"/>
+            <use href="#brg-cb"/><use href="#brg-bb-rev"/>
+            <use href="#brg-br1"/><use href="#brg-br2"/>
+          </g>
+
+          <!-- LEFT: Robot (ROS2 node) -->
+          <g>
+            <rect x="80" y="120" width="240" height="300" rx="20" fill="#1a2038" stroke="rgba(255,255,255,0.1)"/>
+            <text x="200" y="148" text-anchor="middle" fill="#a4adc8" font-family="JetBrains Mono" font-size="11" letter-spacing="3">ROBOT · ROS2</text>
+
+            <!-- telemetry topics (cyan) -->
+            <g font-family="JetBrains Mono" font-size="12">
+              <rect x="100" y="166" width="200" height="26" rx="7" fill="rgba(62,209,255,0.08)" stroke="rgba(62,209,255,0.3)"/>
+              <text x="115" y="184" fill="#3ed1ff">/odom</text>
+              <rect x="100" y="200" width="200" height="26" rx="7" fill="rgba(62,209,255,0.08)" stroke="rgba(62,209,255,0.3)"/>
+              <text x="115" y="218" fill="#3ed1ff">/scan</text>
+              <rect x="100" y="234" width="200" height="26" rx="7" fill="rgba(62,209,255,0.08)" stroke="rgba(62,209,255,0.3)"/>
+              <text x="115" y="252" fill="#3ed1ff">/camera/image_raw</text>
+              <rect x="100" y="268" width="200" height="26" rx="7" fill="rgba(62,209,255,0.08)" stroke="rgba(62,209,255,0.3)"/>
+              <text x="115" y="286" fill="#3ed1ff">/battery_state</text>
+
+              <!-- command topics (pink) -->
+              <rect x="100" y="312" width="200" height="26" rx="7" fill="rgba(255,77,143,0.08)" stroke="rgba(255,77,143,0.3)"/>
+              <text x="115" y="330" fill="#ff4d8f">/cmd_vel</text>
+              <rect x="100" y="346" width="200" height="26" rx="7" fill="rgba(255,77,143,0.08)" stroke="rgba(255,77,143,0.3)"/>
+              <text x="115" y="364" fill="#ff4d8f">/goal_pose</text>
+              <rect x="100" y="380" width="200" height="26" rx="7" fill="rgba(255,77,143,0.08)" stroke="rgba(255,77,143,0.3)"/>
+              <text x="115" y="398" fill="#ff4d8f">/emergency_stop</text>
+            </g>
+          </g>
+
+          <!-- CENTER: Bridge -->
+          <g>
+            <rect x="470" y="180" width="220" height="200" rx="22" fill="url(#brg-bridge)"/>
+            <text x="580" y="232" text-anchor="middle" fill="white" font-family="Plus Jakarta Sans" font-size="22" font-weight="700">ROS2 ⇄ MQTT</text>
+            <text x="580" y="254" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="Plus Jakarta Sans" font-size="14" font-weight="500">Bridge</text>
+
+            <!-- status row -->
+            <g transform="translate(495, 295)">
+              <circle cx="0" cy="0" r="5" fill="#3ed1ff">
+                <animate attributeName="opacity" values="1;0.3;1" dur="1.4s" repeatCount="indefinite"/>
+              </circle>
+              <text x="14" y="4" fill="white" font-family="JetBrains Mono" font-size="10" letter-spacing="1.5">CONNECTED</text>
+            </g>
+            <g transform="translate(495, 320)">
+              <rect x="-6" y="-7" width="12" height="12" rx="2" fill="rgba(255,255,255,0.18)"/>
+              <text x="14" y="4" fill="white" font-family="JetBrains Mono" font-size="10" letter-spacing="1.5">QoS · 1</text>
+            </g>
+            <g transform="translate(495, 345)">
+              <rect x="-6" y="-7" width="12" height="12" rx="2" fill="rgba(255,255,255,0.18)"/>
+              <text x="14" y="4" fill="white" font-family="JetBrains Mono" font-size="10" letter-spacing="1.5">RETRY · AUTO</text>
+            </g>
+          </g>
+
+          <!-- MQTT broker (cylinder) -->
+          <g>
+            <ellipse cx="860" cy="180" rx="50" ry="12" fill="#3ed1ff" opacity="0.6"/>
+            <path d="M 810,180 L 810,320 A 50 12 0 0 0 910,320 L 910,180 Z" fill="url(#brg-broker)"/>
+            <ellipse cx="860" cy="180" rx="50" ry="12" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <text x="860" y="240" text-anchor="middle" fill="white" font-family="Plus Jakarta Sans" font-size="16" font-weight="700">MQTT</text>
+            <text x="860" y="262" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Plus Jakarta Sans" font-size="11" font-weight="500">Broker</text>
+            <text x="860" y="294" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="JetBrains Mono" font-size="9" letter-spacing="1.5">:1883 / TLS</text>
+          </g>
+
+          <!-- FAR RIGHT: FleetOps cloud dashboard -->
+          <g>
+            <rect x="1010" y="140" width="170" height="220" rx="16" fill="#1a2038" stroke="rgba(255,255,255,0.1)"/>
+            <text x="1095" y="165" text-anchor="middle" fill="#a4adc8" font-family="JetBrains Mono" font-size="10" letter-spacing="2.5">FLEETOPS · CLOUD</text>
+            <circle cx="1163" cy="160" r="4" fill="#3ed1ff">
+              <animate attributeName="opacity" values="1;0.3;1" dur="1.1s" repeatCount="indefinite"/>
+            </circle>
+            <!-- mini line chart -->
+            <polyline points="1025,260 1045,245 1065,255 1085,230 1105,240 1125,215 1145,225 1165,205"
+                      fill="none" stroke="#3ed1ff" stroke-width="2" stroke-linecap="round"/>
+            <polyline points="1025,280 1045,275 1065,265 1085,272 1105,260 1125,265 1145,250 1165,258"
+                      fill="none" stroke="#7c5cff" stroke-width="2" stroke-linecap="round"/>
+            <!-- mini bar chart -->
+            <rect x="1025" y="310" width="14" height="38" rx="2" fill="#3ed1ff"/>
+            <rect x="1045" y="298" width="14" height="50" rx="2" fill="#7c5cff"/>
+            <rect x="1065" y="318" width="14" height="30" rx="2" fill="#3ed1ff"/>
+            <rect x="1085" y="290" width="14" height="58" rx="2" fill="#ff4d8f"/>
+            <rect x="1105" y="305" width="14" height="43" rx="2" fill="#7c5cff"/>
+            <rect x="1125" y="312" width="14" height="36" rx="2" fill="#3ed1ff"/>
+            <rect x="1145" y="295" width="14" height="53" rx="2" fill="#7c5cff"/>
+            <rect x="1165" y="300" width="14" height="48" rx="2" fill="#ff4d8f"/>
+          </g>
+
+          <!-- Section labels -->
+          <text x="200" y="100" text-anchor="middle" fill="#a4adc8" font-family="JetBrains Mono" font-size="10" letter-spacing="2">EDGE</text>
+          <text x="580" y="160" text-anchor="middle" fill="#9d7fff" font-family="JetBrains Mono" font-size="10" letter-spacing="2">BRIDGE</text>
+          <text x="860" y="148" text-anchor="middle" fill="#3ed1ff" font-family="JetBrains Mono" font-size="10" letter-spacing="2">MESSAGE BUS</text>
+          <text x="1095" y="115" text-anchor="middle" fill="#ff4d8f" font-family="JetBrains Mono" font-size="10" letter-spacing="2">CLOUD</text>
+
+          <!-- Direction labels -->
+          <text x="395" y="125" fill="#3ed1ff" font-family="JetBrains Mono" font-size="9" letter-spacing="2" opacity="0.85">TELEMETRY →</text>
+          <text x="395" y="445" fill="#ff4d8f" font-family="JetBrains Mono" font-size="9" letter-spacing="2" opacity="0.85">← COMMANDS</text>
+          <text x="730" y="200" fill="rgba(164,173,200,0.8)" font-family="JetBrains Mono" font-size="9" letter-spacing="2">PUB</text>
+          <text x="730" y="313" fill="rgba(164,173,200,0.8)" font-family="JetBrains Mono" font-size="9" letter-spacing="2">SUB</text>
+
+          <!-- Forward animated packets (cyan, telemetry) -->
+          <circle r="6" fill="#3ed1ff">
+            <animateMotion dur="2.4s" repeatCount="indefinite" begin="0s"><mpath href="#brg-p1"/></animateMotion>
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.4s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="6" fill="#3ed1ff">
+            <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.6s"><mpath href="#brg-p2"/></animateMotion>
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.4s" repeatCount="indefinite" begin="0.6s"/>
+          </circle>
+          <circle r="6" fill="#3ed1ff">
+            <animateMotion dur="2.4s" repeatCount="indefinite" begin="1.2s"><mpath href="#brg-p3"/></animateMotion>
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.4s" repeatCount="indefinite" begin="1.2s"/>
+          </circle>
+          <circle r="6" fill="#3ed1ff">
+            <animateMotion dur="2.4s" repeatCount="indefinite" begin="1.8s"><mpath href="#brg-p4"/></animateMotion>
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.4s" repeatCount="indefinite" begin="1.8s"/>
+          </circle>
+
+          <!-- Bridge → broker → cloud -->
+          <circle r="6" fill="#3ed1ff">
+            <animateMotion dur="1.6s" repeatCount="indefinite" begin="0.3s"><mpath href="#brg-bb"/></animateMotion>
+          </circle>
+          <circle r="6" fill="#3ed1ff">
+            <animateMotion dur="1.6s" repeatCount="indefinite" begin="1.1s"><mpath href="#brg-bb"/></animateMotion>
+          </circle>
+          <circle r="6" fill="#3ed1ff">
+            <animateMotion dur="1.4s" repeatCount="indefinite" begin="0.5s"><mpath href="#brg-bc"/></animateMotion>
+          </circle>
+          <circle r="6" fill="#3ed1ff">
+            <animateMotion dur="1.4s" repeatCount="indefinite" begin="1.3s"><mpath href="#brg-bc"/></animateMotion>
+          </circle>
+
+          <!-- Reverse animated packets (pink, commands) -->
+          <circle r="5" fill="#ff4d8f">
+            <animateMotion dur="1.4s" repeatCount="indefinite" begin="0.2s"><mpath href="#brg-cb"/></animateMotion>
+          </circle>
+          <circle r="5" fill="#ff4d8f">
+            <animateMotion dur="1.6s" repeatCount="indefinite" begin="0.6s"><mpath href="#brg-bb-rev"/></animateMotion>
+          </circle>
+          <circle r="5" fill="#ff4d8f">
+            <animateMotion dur="2.4s" repeatCount="indefinite" begin="1.0s"><mpath href="#brg-br1"/></animateMotion>
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.4s" repeatCount="indefinite" begin="1.0s"/>
+          </circle>
+          <circle r="5" fill="#ff4d8f">
+            <animateMotion dur="2.4s" repeatCount="indefinite" begin="1.7s"><mpath href="#brg-br2"/></animateMotion>
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.4s" repeatCount="indefinite" begin="1.7s"/>
+          </circle>
+
+          <!-- Live telemetry pings on the cloud dashboard -->
+          <circle cx="1163" cy="160" r="6" fill="none" stroke="#3ed1ff" stroke-width="2">
+            <animate attributeName="r" values="4;14;4" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
+      <div class="work-body">
+        <div class="work-cat">Industrial IoT · Architecture</div>
+        <h3 class="work-title">ROS2 ↔ MQTT Bridge</h3>
+        <p class="work-desc">The communication backbone that powers ECC, UGV, and FleetOps. A bidirectional bridge translating ROS2 topics ↔ MQTT in real time — with QoS levels, auto-reconnect, and configurable topic-mapping rules. Survives flaky cellular links during outdoor field trials and scales across multiple robot fleets without DDS leaking onto the wider network.</p>
+        <div class="work-chips"><span>ROS2</span><span>MQTT</span><span>TLS</span><span>QoS 0/1/2</span><span>Auto-reconnect</span><span>Topic Mapping</span><span>Python</span><span>Docker</span></div>
+      </div>
+    </article>
+
+    <article class="work-card work-card-wide" id="fms-card">
+      <div class="gallery" data-gallery>
+        <div class="gallery-main" data-gallery-main>
+          <video src="monitoring-dashboard/FMS_record.mp4"
+                 poster="monitoring-dashboard/dashboard.png"
+                 autoplay muted loop playsinline></video>
+        </div>
+        <div class="gallery-thumbs" data-gallery-thumbs>
+          <button class="gallery-thumb is-video active" data-type="video"
+                  data-src="monitoring-dashboard/FMS_record.mp4"
+                  data-poster="monitoring-dashboard/dashboard.png"
+                  aria-label="Fleet Management System screen recording">
+            <img src="monitoring-dashboard/dashboard.png" alt="FMS screen recording">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="monitoring-dashboard/dashboard.png"
+                  aria-label="Fleet Dashboard — live status of all buggies">
+            <img src="monitoring-dashboard/dashboard.png" alt="Fleet Dashboard">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="monitoring-dashboard/map.png"
+                  aria-label="Live Map — real-time geolocation tracking">
+            <img src="monitoring-dashboard/map.png" alt="Live Map">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="monitoring-dashboard/analytics.png"
+                  aria-label="Analytics — battery, speed and uptime trends">
+            <img src="monitoring-dashboard/analytics.png" alt="Fleet Analytics">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="monitoring-dashboard/camera.png"
+                  aria-label="Camera Feeds — multi-view per buggy">
+            <img src="monitoring-dashboard/camera.png" alt="Camera Feeds">
+          </button>
+          <button class="gallery-thumb" data-type="image"
+                  data-src="monitoring-dashboard/admin_user.png"
+                  aria-label="User Management — admin console">
+            <img src="monitoring-dashboard/admin_user.png" alt="User Management">
+          </button>
+          <button class="gallery-thumb is-video" data-type="video"
+                  data-src="monitoring-dashboard/backend_store.mp4"
+                  data-poster="monitoring-dashboard/analytics.png"
+                  aria-label="Backend data store walkthrough">
+            <img src="monitoring-dashboard/analytics.png" alt="Backend data store">
+          </button>
+        </div>
+      </div>
+      <div class="work-body">
+        <div class="work-cat">Industrial IoT · Fleet Management System</div>
+        <h3 class="work-title">FleetOps — Real-Time Fleet Management Dashboard</h3>
+        <p class="work-desc">In-house web platform for monitoring and managing the autonomous buggy / ECC fleet end-to-end: live Fleet Dashboard (uptime, online/offline per unit, roadside infrastructure), geolocation map, multi-camera feeds, battery &amp; speed analytics, user/role management, and a backend data store streaming telemetry from each robot. ROS2 telemetry is bridged to MQTT and surfaced in the browser in real time. Click any thumb to switch, or click the main view to enlarge.</p>
+        <div class="work-chips"><span>ROS2</span><span>MQTT</span><span>WebSockets</span><span>React</span><span>Node.js</span><span>Time-series DB</span><span>Mapbox</span><span>RTSP / WebRTC</span><span>Role-based Access</span></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <div class="eyebrow">Technical Stack <span class="highlight">/ Toolkit</span></div>
+  <h2 class="section-title">The <span class="accent">tools</span> I use.</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">⚙️</div>
+      <div class="skill-cat-title">Robotics &amp; Integration</div>
+      <div class="skill-chips"><span>ROS2</span><span>MQTT</span><span>Node-RED</span><span>REST API</span><span>Industrial IoT</span><span>UHF RFID</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">💻</div>
+      <div class="skill-cat-title">Programming &amp; Control</div>
+      <div class="skill-chips"><span>Python</span><span>C</span><span>C++</span><span>PLC / Ladder Logic</span><span>PyQt</span><span>HMI / GUI</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🔌</div>
+      <div class="skill-cat-title">Hardware &amp; Edge Systems</div>
+      <div class="skill-chips"><span>NVIDIA Jetson Orin</span><span>Raspberry Pi</span><span>Embedded Linux</span><span>Microcontrollers</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📋</div>
+      <div class="skill-cat-title">Project &amp; Collaboration</div>
+      <div class="skill-chips"><span>MS Project</span><span>Jira</span><span>Trello</span><span>Asana</span><span>Git</span><span>Agile / Scrum</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="cta-card">
+    <h2>Let's build <span class="accent">something good.</span></h2>
+    <p>Open to Engineering Manager roles, robotics &amp; automation consulting, and IIoT integration projects. Grab the full CV or drop me a line.</p>
+    <div class="cta-actions">
+      <a href="resume.pdf" download="Muhammad_Syahmi_Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 16px; padding: 16px 32px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download Resume (PDF)
+      </a>
+      <button type="button" class="btn btn-ghost" style="font-size: 16px; padding: 14.5px 30.5px;">Start a conversation</button>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:msyahmi9610@gmail.com" class="contact-link">✉ msyahmi9610@gmail.com</a>
+      <a href="tel:+60146649670" class="contact-link" id="phoneCopy" data-copy="+60146649670" title="Click to copy">☎ +60 14-664 9670</a>
+      <a href="https://linkedin.com/in/muhammad-syahmi-abdul-rahman-b6aa38267" target="_blank" rel="noopener" class="contact-link">in LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Media viewer">
+  <button class="lightbox-btn lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <button class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Previous">‹</button>
+  <div class="lightbox-content" id="lightboxContent"></div>
+  <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Next">›</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<footer>
+  <div>© 2026 Muhammad Syahmi Bin Abdul Rahman</div>
+  <div>Built in Shah Alam, Malaysia</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ----- Gallery + Lightbox -----
+  document.querySelectorAll('[data-gallery]').forEach(gallery => {
+    const main = gallery.querySelector('[data-gallery-main]');
+    const thumbs = Array.from(gallery.querySelectorAll('.gallery-thumb'));
+
+    const renderMain = (thumb) => {
+      const type = thumb.dataset.type;
+      const src = thumb.dataset.src;
+      main.innerHTML = '';
+      if (type === 'video') {
+        const v = document.createElement('video');
+        v.src = src;
+        if (thumb.dataset.poster) v.poster = thumb.dataset.poster;
+        v.autoplay = true; v.muted = true; v.loop = true;
+        v.playsInline = true; v.setAttribute('playsinline', '');
+        main.appendChild(v);
+      } else {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = thumb.getAttribute('aria-label') || '';
+        main.appendChild(img);
+      }
+      thumbs.forEach(t => t.classList.toggle('active', t === thumb));
+    };
+
+    thumbs.forEach(t => t.addEventListener('click', () => renderMain(t)));
+
+    // Click main to open lightbox at active index
+    main.addEventListener('click', () => {
+      const idx = thumbs.findIndex(t => t.classList.contains('active'));
+      openLightbox(thumbs, idx);
+    });
+  });
+
+  // ----- Lightbox -----
+  const lightbox = document.getElementById('lightbox');
+  const lbContent = document.getElementById('lightboxContent');
+  const lbCounter = document.getElementById('lightboxCounter');
+  let lbItems = [], lbIndex = 0;
+
+  function renderLightbox() {
+    const thumb = lbItems[lbIndex];
+    lbContent.innerHTML = '';
+    if (thumb.dataset.type === 'video') {
+      const v = document.createElement('video');
+      v.src = thumb.dataset.src;
+      if (thumb.dataset.poster) v.poster = thumb.dataset.poster;
+      v.controls = true; v.autoplay = true; v.playsInline = true;
+      v.setAttribute('playsinline', '');
+      lbContent.appendChild(v);
+    } else {
+      const img = document.createElement('img');
+      img.src = thumb.dataset.src;
+      img.alt = thumb.getAttribute('aria-label') || '';
+      lbContent.appendChild(img);
+    }
+    lbCounter.textContent = `${lbIndex + 1} / ${lbItems.length}`;
+  }
+
+  function openLightbox(items, idx) {
+    lbItems = items; lbIndex = idx;
+    renderLightbox();
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lbContent.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+  function lbStep(delta) {
+    if (!lbItems.length) return;
+    lbIndex = (lbIndex + delta + lbItems.length) % lbItems.length;
+    renderLightbox();
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  document.getElementById('lightboxPrev').addEventListener('click', e => { e.stopPropagation(); lbStep(-1); });
+  document.getElementById('lightboxNext').addEventListener('click', e => { e.stopPropagation(); lbStep(1); });
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lbStep(-1);
+    if (e.key === 'ArrowRight') lbStep(1);
+  });
+
+  // ----- Click-to-copy phone number -----
+  const phoneEl = document.getElementById('phoneCopy');
+  if (phoneEl) {
+    const original = phoneEl.innerHTML;
+    let resetTimer = null;
+    const showCopied = () => {
+      phoneEl.innerHTML = '✓ Copied!';
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(() => { phoneEl.innerHTML = original; }, 1600);
+    };
+    phoneEl.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const text = phoneEl.dataset.copy || phoneEl.textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+        showCopied();
+      } catch {
+        // Fallback for older browsers / non-secure contexts
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); showCopied(); } catch {}
+        document.body.removeChild(ta);
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

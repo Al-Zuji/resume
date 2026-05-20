@@ -1,0 +1,37 @@
+# Windows system files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# OneDrive
+.~lock.*
+~$*
+
+# macOS (in case anyone else clones on Mac)
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Local-only resume drafts (keep resume.pdf since it's linked from the site)
+resume-draft*.pdf
+resume-old*.pdf
+
+# Node / build artifacts (in case you add tooling later)
+node_modules/
+dist/
+build/
+.cache/
