@@ -433,6 +433,8 @@
   .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
+  .hero-anim { opacity: 0; }
+
   @media (max-width: 960px) {
     nav { padding: 16px 20px; }
     .nav-links { display: none; }
@@ -451,6 +453,7 @@
 </style>
 </head>
 <body>
+<noscript><style>.hero-anim{opacity:1!important;}</style></noscript>
 
 <div class="ambient ambient-1"></div>
 <div class="ambient ambient-2"></div>
@@ -475,22 +478,22 @@
 
 <section class="hero" id="top">
   <div class="hero-left">
-    <div class="eyebrow">Introducing <span class="highlight">Muhammad Syahmi</span></div>
-    <h1>Engineering<br><span class="purple-word">robotics</span> &amp;<br>automation.</h1>
-    <p class="hero-tagline">I build autonomous robots, AI-powered workflow automations, and the IIoT platforms that tie them together — from n8n pipelines and internal tools to ROS2 systems, concept to commissioning.</p>
+    <div class="eyebrow hero-anim">Introducing <span class="highlight">Muhammad Syahmi</span></div>
+    <h1 class="hero-anim">Engineering<br><span class="purple-word">robotics</span> &amp;<br>automation.</h1>
+    <p class="hero-tagline hero-anim">I build autonomous robots, AI-powered workflow automations, and the IIoT platforms that tie them together — from n8n pipelines and internal tools to ROS2 systems, concept to commissioning.</p>
     <div class="hero-cta">
-      <a href="#work" class="btn btn-primary">View my work</a>
-      <a href="#contact" class="btn btn-ghost"><span class="play-icon"></span>Get in touch</a>
+      <a href="#work" class="btn btn-primary hero-anim">View my work</a>
+      <a href="#contact" class="btn btn-ghost hero-anim"><span class="play-icon"></span>Get in touch</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="num">7<span class="plus">+</span></div><div class="lbl">Years</div></div>
-      <div class="hero-stat"><div class="num">15<span class="plus">+</span></div><div class="lbl">Projects</div></div>
-      <div class="hero-stat"><div class="num">20<span class="plus">%</span></div><div class="lbl">Efficiency</div></div>
-      <div class="hero-stat"><div class="num">25<span class="plus">%</span></div><div class="lbl">Retention</div></div>
+      <div class="hero-stat hero-anim"><div class="num"><span class="num-value" data-count="7">7</span><span class="plus">+</span></div><div class="lbl">Years</div></div>
+      <div class="hero-stat hero-anim"><div class="num"><span class="num-value" data-count="15">15</span><span class="plus">+</span></div><div class="lbl">Projects</div></div>
+      <div class="hero-stat hero-anim"><div class="num"><span class="num-value" data-count="20">20</span><span class="plus">%</span></div><div class="lbl">Efficiency</div></div>
+      <div class="hero-stat hero-anim"><div class="num"><span class="num-value" data-count="25">25</span><span class="plus">%</span></div><div class="lbl">Retention</div></div>
     </div>
   </div>
 
-  <div class="hero-illo">
+  <div class="hero-illo hero-anim">
     <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -1327,15 +1330,80 @@
 </footer>
 
 <script>
+  // ----- Section reveal (staggered via anime.js when available, plain fade otherwise) -----
+  const revealTargets = {
+    about: '.comp-pill, .edu-card',
+    experience: '.exp-card',
+    work: '.work-card',
+    skills: '.skill-card',
+    contact: '.cta-card'
+  };
+  let animeLib = null;
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('visible');
+        if (animeLib) {
+          const sel = revealTargets[e.target.id];
+          const items = sel ? e.target.querySelectorAll(sel) : null;
+          if (items && items.length) {
+            animeLib.animate(items, {
+              opacity: [0, 1],
+              translateY: [28, 0],
+              duration: 700,
+              ease: 'outQuad',
+              delay: animeLib.stagger(80)
+            });
+          }
+        }
         observer.unobserve(e.target);
       }
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ----- anime.js progressive enhancement: hero entrance + animated counters -----
+  // (animejs.com/documentation) — loaded from CDN; if it fails to load or the
+  // user prefers reduced motion, hero content simply falls back to fully visible.
+  (async () => {
+    const heroAnimEls = document.querySelectorAll('.hero-anim');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      heroAnimEls.forEach(el => { el.style.opacity = 1; });
+      return;
+    }
+    let anime;
+    try {
+      anime = await import('https://cdn.jsdelivr.net/npm/animejs@4/+esm');
+    } catch (err) {
+      heroAnimEls.forEach(el => { el.style.opacity = 1; });
+      return;
+    }
+    animeLib = anime;
+    const { animate, stagger, createTimeline } = anime;
+
+    createTimeline({ defaults: { ease: 'outExpo' } })
+      .add('.hero .eyebrow', { opacity: [0, 1], translateY: [16, 0], duration: 600 })
+      .add('.hero-left h1', { opacity: [0, 1], translateY: [24, 0], duration: 700 }, '-=400')
+      .add('.hero-tagline', { opacity: [0, 1], translateY: [16, 0], duration: 600 }, '-=450')
+      .add('.hero-cta .btn', { opacity: [0, 1], translateY: [16, 0], duration: 500, delay: stagger(100) }, '-=400')
+      .add('.hero-stat', { opacity: [0, 1], translateY: [16, 0], duration: 500, delay: stagger(90) }, '-=350')
+      .add('.hero-illo', { opacity: [0, 1], scale: [0.92, 1], duration: 900 }, '-=800');
+
+    document.querySelectorAll('.num-value').forEach(el => {
+      const target = parseInt(el.dataset.count, 10) || 0;
+      const counter = { val: 0 };
+      el.textContent = '0';
+      animate(counter, {
+        val: target,
+        duration: 1400,
+        delay: 900,
+        ease: 'outExpo',
+        onUpdate: () => { el.textContent = Math.round(counter.val); }
+      });
+    });
+  })();
 
   // ----- Gallery + Lightbox -----
   document.querySelectorAll('[data-gallery]').forEach(gallery => {
