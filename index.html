@@ -620,6 +620,7 @@
       <p>I'm <strong>Muhammad Syahmi</strong> — an engineering project manager who builds <strong>autonomous robots</strong>, the <strong>operator GUIs</strong> that drive them, and the <strong>IIoT platforms</strong> that monitor them. Seven years end-to-end: concept → prototype → field trial → production deployment.</p>
       <p>Currently leading a cross-functional team of <strong>6–7 engineers</strong> at Sailcott (M) International across software, electrical, and mechanical disciplines. Together we've shipped the <strong>Electric Cart Carrier (ECC)</strong> and <strong>Autonomous Buggy / UGV</strong>, designed in-house operator HMIs used daily on site, deployed an <strong>RFID + smart-weighing</strong> system for clinical-waste compliance, built <strong>FleetOps</strong> — the in-house web platform that monitors and manages the entire fleet in real time — and architected the <strong>ROS2 ↔ MQTT bridge</strong> that ties it all together.</p>
       <p>Beyond hardware, I build <strong>AI-assisted internal tools</strong> and workflow automations — from <strong>n8n</strong> multi-channel pipelines (WhatsApp/Telegram → Gmail/Excel) to Python tools that auto-generate payroll documents with full EPF/SOCSO/PCB computation. I use <strong>Claude, LLM APIs, and MCP tools</strong> as active parts of my development workflow, not as novelties.</p>
+      <p>Underneath the robots and dashboards sits solid systems engineering: <strong>Linux and Windows server administration</strong>, <strong>PM2 / Docker</strong> process management, <strong>TLS-secured networking</strong> (LAN/WAN, VPN, MQTT over TLS), and the backup and redundancy strategies that keep production systems at high uptime.</p>
       <p>I turn ambitious R&amp;D into <strong>production-ready automation</strong> that ships on time, on budget, and built to scale. Open to Engineering Manager, System Engineer, IoT Engineer, and AI &amp; Automation roles where depth, delivery, and automation strategy intersect.</p>
     </div>
     <div class="competency-grid">
@@ -643,6 +644,12 @@
       <div class="comp-pill"><div class="comp-dot"></div>Workflow Automation (n8n)</div>
       <div class="comp-pill"><div class="comp-dot"></div>LLM &amp; API Integration</div>
       <div class="comp-pill"><div class="comp-dot"></div>Internal Tools &amp; Scripting</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Linux &amp; Windows Administration</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Server Deployment (PM2 / Docker)</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Network &amp; VPN Integration</div>
+      <div class="comp-pill"><div class="comp-dot"></div>Security, Backup &amp; Redundancy</div>
+      <div class="comp-pill"><div class="comp-dot"></div>SQL / SQLite Database Design</div>
+      <div class="comp-pill"><div class="comp-dot"></div>System Monitoring &amp; Uptime</div>
     </div>
   </div>
 
@@ -682,10 +689,14 @@
       <li>Shipped <strong>FleetOps</strong> — an in-house fleet management web platform with live status, geolocation map, multi-camera feeds, battery/speed analytics, and role-based admin for the autonomous buggy &amp; ECC fleet.</li>
       <li>Designed operator-facing <strong>GUIs / HMIs</strong> used daily on site — multi-map ROS2 launch, SLAM mapping &amp; teleop tools, keepout-mask generator, and PLC ON/OFF control over USB-UART — turning a terminal-only workflow into a one-screen operator panel.</li>
       <li>Architected ROS2-to-MQTT communication framework enabling reliable cloud-to-robot data transmission and scalable IoT integration.</li>
+      <li>Installed, configured, and maintained <strong>Linux and Windows</strong> systems supporting production applications, ensuring high system availability and uptime.</li>
+      <li>Deployed and administered web and database servers (Node.js/Express, SQLite) with <strong>PM2</strong> process management — including monitoring, log analysis, and performance tuning.</li>
+      <li>Implemented security, backup, and redundancy strategies — TLS encryption, QoS, and auto-reconnect/failover mechanisms — to minimize system and server outages.</li>
       <li>Delivered 3 major automation projects ahead of schedule while maintaining full budget compliance.</li>
-      <li>Improved engineering delivery efficiency by 20% through structured sprint planning and workflow optimization.</li>
+      <li>Built automation scripts and data-extraction/reporting pipelines (Python, Bash, Regex) and applied structured sprint planning to improve engineering delivery efficiency by 20%.</li>
       <li>Built internal automation tools using n8n and Python — including <strong>TeleAduan</strong>, a multi-channel complaint pipeline (WhatsApp/Telegram → Gmail/Excel), and payroll tools auto-computing EPF, SOCSO, EIS, and PCB/MTD deductions per Employment Act 1955.</li>
       <li>Integrated AI-assisted development (Claude, LLM APIs, MCP tools) into the engineering workflow to accelerate delivery of internal tools and documentation pipelines.</li>
+      <li>Maintained IT documentation covering system inventory, procedures, and configurations; provided standby support for production issues and delivered end-user training.</li>
       <li>Primary technical liaison between engineering teams, management, and clients.</li>
     </ul>
   </div>
@@ -1134,8 +1145,8 @@
       <div class="work-body">
         <div class="work-cat">Industrial IoT · Fleet Management System</div>
         <h3 class="work-title">FleetOps — Real-Time Fleet Management Dashboard</h3>
-        <p class="work-desc">In-house web platform for monitoring and managing the autonomous buggy / ECC fleet end-to-end: live Fleet Dashboard (uptime, online/offline per unit, roadside infrastructure), geolocation map, multi-camera feeds, battery &amp; speed analytics, user/role management, and a backend data store streaming telemetry from each robot. ROS2 telemetry is bridged to MQTT and surfaced in the browser in real time. Click any thumb to switch, or click the main view to enlarge.</p>
-        <div class="work-chips"><span>ROS2</span><span>MQTT</span><span>WebSockets</span><span>React</span><span>Node.js</span><span>Time-series DB</span><span>Mapbox</span><span>RTSP / WebRTC</span><span>Role-based Access</span></div>
+        <p class="work-desc">In-house web platform for monitoring and managing the autonomous buggy / ECC fleet end-to-end: live Fleet Dashboard (uptime, online/offline per unit, roadside infrastructure), geolocation map, multi-camera feeds, battery &amp; speed analytics, user/role management, and a backend data store streaming telemetry from each robot. ROS2 telemetry is bridged over TLS-secured MQTT and surfaced in the browser in real time. Deployed and maintained as a production web/database server stack with PM2 process management, a hand-designed SQLite data model, uptime monitoring, and CSV/PDF reporting. Click any thumb to switch, or click the main view to enlarge.</p>
+        <div class="work-chips"><span>ROS2</span><span>MQTT · TLS</span><span>WebSockets</span><span>React</span><span>Node.js / Express</span><span>SQLite</span><span>PM2</span><span>Time-series DB</span><span>Mapbox</span><span>RTSP / WebRTC</span><span>Role-based Access</span><span>CSV / PDF Reporting</span></div>
       </div>
     </article>
 
@@ -1254,7 +1265,7 @@
         <div class="work-cat">Internal Tools · Process Automation · Python</div>
         <h3 class="work-title">Payroll &amp; HR Automation</h3>
         <p class="work-desc">Built Python tools that auto-generate Malaysian payslips and HR documents — computing EPF, SOCSO, EIS, and PCB/MTD deductions per Employment Act 1955. Outputs clean PDF payslips and Excel reports per employee, eliminating repetitive manual payroll calculation and document work entirely.</p>
-        <div class="work-chips"><span>Python</span><span>openpyxl</span><span>ReportLab</span><span>Payroll Automation</span><span>Document Generation</span></div>
+        <div class="work-chips"><span>Python</span><span>openpyxl</span><span>ReportLab</span><span>Tkinter</span><span>Regex</span><span>Payroll Automation</span><span>Document Generation</span></div>
       </div>
     </article>
 
@@ -1288,7 +1299,12 @@
     <div class="skill-card">
       <div class="skill-icon">📋</div>
       <div class="skill-cat-title">Project &amp; Collaboration</div>
-      <div class="skill-chips"><span>MS Project</span><span>Jira</span><span>Trello</span><span>Asana</span><span>Git</span><span>Agile / Scrum</span></div>
+      <div class="skill-chips"><span>MS Project</span><span>Jira</span><span>Trello</span><span>Asana</span><span>Git</span><span>Agile / Scrum</span><span>VS Code</span><span>Draw.io</span><span>Microsoft Office</span><span>UAT / SIT Testing</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🖥️</div>
+      <div class="skill-cat-title">Systems Administration &amp; Networking</div>
+      <div class="skill-chips"><span>Linux (Ubuntu)</span><span>Windows Server</span><span>PM2</span><span>Docker</span><span>LAN / WAN</span><span>VPN (Tailscale)</span><span>TLS / QoS</span><span>RDP</span><span>SQL / SQLite</span><span>AWS · Azure · GCP</span><span>HiveMQ Cloud</span></div>
     </div>
   </div>
 </section>
